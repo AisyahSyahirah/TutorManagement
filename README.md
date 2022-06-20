@@ -5,19 +5,20 @@
     2. Nur aisyah Syahirah binti Osman 1819266
 
 ### Introduction
-    Our application is an intermediary platform between tutors and the student. Students can find a tutor that teach the subjects they 
-    need improvement with. In the application, we provide the details of the tutors such as the name and contact number as well as the 
-    subjects they are teaching. From there, the students will contact the tutors and deal further about the teaching and the payment. 
+    Our application is a platform to display the tutors that teach secondary school subjects. Users apply for the position by filling in the 
+    form provided in the application. If approved, their details will be saved in the database. The only details that will be displayed in the 
+    application are the tutor's name, subjects offered and the tutor's contact number.
 
 ### Objectives
-    1. To provide student with tutors that teaches secondary school subjects
-    2. To help tutors make pocket money 
+    1. To provide tutors that teaches secondary school subjects
+    2. To help tutors make pocket money
 
 ### Features and Functionalities
     1. CRUD functions
-    2. Students login
-    3. Tutors information details
-
+    2. Admin login
+    3. Form for tutors information details
+    4. Camera feature for tutor form
+    
 ### Screen navigation (routing) and widgets (UI and reusable widget) implementation
 
 ### Sequence diagram
