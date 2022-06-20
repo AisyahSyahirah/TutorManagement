@@ -5,9 +5,9 @@
     2. Nur aisyah Syahirah binti Osman 1819266
 
 ### Introduction
-    Our application is a platform to display the tutors that teach secondary school subjects. Users apply for the position by filling in the 
-    form provided in the application. If approved, their details will be saved in the database. The only details that will be displayed in the 
-    application are the tutor's name, subjects offered and the tutor's contact number.
+    Our application is a platform to display the tutors that teach secondary school subjects. Users apply for the position by filling 
+    in the form provided in the application. If approved, their details will be saved in the database. The only details that will be 
+    displayed in the application are the tutor's name, subjects offered and the tutor's contact number.
 
 ### Objectives
     1. To provide tutors that teaches secondary school subjects
