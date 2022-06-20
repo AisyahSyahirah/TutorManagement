@@ -24,4 +24,4 @@
 ### Screen navigation (routing) and widgets (UI and reusable widget) implementation
 
 ### Sequence diagram
-
+	![alt text](SequenceDiagram.png)
