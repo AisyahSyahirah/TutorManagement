@@ -24,5 +24,3 @@
 
 ### Sequence diagram
 ![alt text](SequenceDiagram.png)
-
-### References
