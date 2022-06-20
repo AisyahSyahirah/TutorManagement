@@ -22,6 +22,11 @@
     4. Camera feature for tutor form
     
 ### Screen navigation (routing) and widgets (UI and reusable widget) implementation
+	![alt text](wireframe1.png)
+	![alt text](wireframe2.png)
+	![alt text](wireframe3.png)
+	![alt text](wireframe4.png)
+	
 
 ### Sequence diagram
 	![alt text](SequenceDiagram.png)
