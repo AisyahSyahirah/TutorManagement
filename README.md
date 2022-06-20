@@ -2,7 +2,7 @@
 
 ### Name and Matric Number of the Group Members
     1. Yasmin Hana binti Zulkifli 1914198
-    2. Nur aisyah Syahirah binti Osman 1819266
+    2. Nur Aisyah Syahirah binti Osman 1819266
 
 ### Introduction
     Our application is a platform to display the tutors that teach secondary school subjects. Users apply for the position by filling 
