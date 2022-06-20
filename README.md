@@ -7,7 +7,7 @@
 ### Introduction
     Our application is an intermediary between tutors and the student. Students can find a tutor that teach the subjects they need 
     improvement with. In the application, we provide the details of the tutors such as the name and contact number as well as the 
-    subjects they are teaching. From there, the students will contact the tutors and deal further about the teaching and payment. 
+    subjects they are teaching. From there, the students will contact the tutors and deal further about the teaching and the payment. 
 
 ### Objectives
     1. To provide student with tutors that teaches secondary school subjects
