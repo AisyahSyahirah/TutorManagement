@@ -82,56 +82,143 @@ class _FourthPageState extends State<FourthPage> {
       print (e);
     }
   }
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    tutor Tutor = ModalRoute.of(context)!.settings.arguments as Tutor;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Application form to become a tutor'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(15),
-              alignment: Alignment.centerLeft,
-              child: Text('Full name  : ${Tutor.fullname}'),
+  void _showDialog(String fname, ic, no, mail, sub) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: new Text("TUTOR DETAILS", textAlign: TextAlign.center),
+          content: new Text('$fname,$ic, $no, $mail, $sub'),
+          actions: <Widget>[
+            new TextButton(
+              child: new Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.all(15),
-              child: Text('IC number : ${Tutor.icno}'),
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.all(15),
-              child: Text('Contact number  : ${Tutor.contactno}'),
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.all(15),
-              child: Text('Email  : ${Tutor.email}'),
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.all(15),
-              child: Text('Subject offered  : ${Tutor.subject}'),
-            ),
-            Container(
-                margin: const EdgeInsets.all(20),
-                width: double.infinity,
-                height: 55,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('Submit'),
-                )),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
-}
+
+  Widget build(BuildContext context) { 
+    return Form(  
+      key: _formKey,  
+      child: Column(  
+        crossAxisAlignment: CrossAxisAlignment.start,  
+        children: <Widget>[ 
+          new Text("Application form to become a tutor", textAlign: TextAlign.center),
+          Padding(
+            padding: EdgeInsets.all(8),
+            child:TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Full name',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '';
+                    }
+                    return null;
+                  }, 
+                  onChanged: (text) {
+                    _setfullname(text);
+                  },
+                  keyboardType: TextInputType.number,
+                )),
+
+          Padding(  
+             padding : EdgeInsets.all(8),
+             child: TextFormField(
+                    decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'IC number',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '';
+                    }
+                    return null;
+                  }, 
+                  onChanged: (text) {
+                    _seticno(text);
+                  },
+                  keyboardType: TextInputType.number,
+                )), 
+
+                Padding(
+            padding: EdgeInsets.all(8),
+            child:TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Contact number',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '';
+                    }
+                    return null;
+                  }, 
+                  onChanged: (text) {
+                    _setcontactno(text);
+                  },
+                  keyboardType: TextInputType.number,
+                )),
+
+                Padding(
+            padding: EdgeInsets.all(8),
+            child:TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Email',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '';
+                    }
+                    return null;
+                  }, 
+                  onChanged: (text) {
+                    _setemail(text);
+                  },
+                  keyboardType: TextInputType.number,
+                )),
+
+                Padding(
+            padding: EdgeInsets.all(8),
+            child:TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Subject offered',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '';
+                    }
+                    return null;
+                  }, 
+                  onChanged: (text) {
+                    _setsubject(text);
+                  },
+                  keyboardType: TextInputType.number,
+                )),
+
+            Padding(
+            padding: const EdgeInsets.all(8),
+            child: ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  _create();
+                }
+              },
+              child: const Text('Submit'),
+              )
+            ) , 
+        ], 
+      ),  
+    );  
+  }  
+}  
+
