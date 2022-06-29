@@ -29,6 +29,59 @@ class _FourthPageState extends State<FourthPage> {
         );
       },
     );
+   
+  var fullname;
+  var icno;
+  var contactno;
+  var email;
+  var subject;
+  var id;
+
+  void _setfullname(String text) {
+    setState(() {
+      fullname = text;
+      id = fullname;
+    });
+  }
+
+  void _seticno(String text) {
+    setState(() {
+      icno = text;
+    });
+  }
+
+  void _setcontactno(String text) {
+    setState(() {
+      contactno = text;
+    });
+  }
+
+  void _setemail(String text) {
+    setState(() {
+      email = text;
+    });
+  }
+
+  void _setsubject(String text) {
+    setState(() {
+      subject = text;
+    });
+  }
+
+  void _create() async{
+    try {
+      await firestore.collection('name').doc(id).set({
+        'fullname': fullname,
+        'icno': icno,
+        'contactno': contactno,
+        'email': email,
+        'subject' : subject,
+      });
+    }
+    catch(e){
+      print (e);
+    }
+  }
   }
 
   @override
