@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 import 'routes.dart';
 import 'tutor.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    // Replace with actual values
+    options: FirebaseOptions(
+      apiKey: "",
+      appId: "1:151973943972:android:a023969e53e331e33be431",
+      messagingSenderId: "151973943972",
+      projectId: "bmi1-cb5f1",
+    ),
+  );
+  runApp(MyApp());
+}
 class FourthPage extends StatefulWidget {
   const FourthPage({Key? key}) : super(key: key);
 
@@ -10,25 +26,6 @@ class FourthPage extends StatefulWidget {
 }
 
 class _FourthPageState extends State<FourthPage> {
-  void _showDialog(String fname, ic, no, mail, sub) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title:
-              new Text("Confirm your submission", textAlign: TextAlign.center),
-          content: new Text('$fname,$ic, $no, $mail, $sub'),
-          actions: <Widget>[
-            new TextButton(
-              child: new Text("Close"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
    
   var fullname;
   var icno;
@@ -221,4 +218,5 @@ class _FourthPageState extends State<FourthPage> {
     );  
   }  
 }  
+}
 
