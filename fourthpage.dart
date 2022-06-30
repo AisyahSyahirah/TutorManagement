@@ -7,10 +7,10 @@ class FourthPage extends StatefulWidget {
   const FourthPage({Key? key}) : super(key: key);
 
   @override
-  State<FourthPage> createState() => _FourthPageState();
+  _FourthPageState createState() => _FourthPageState();
 }
 
-class _FourthPageState extends State<FourthPage> {
+  class _FourthPageState extends State<FourthPage> {
   final _formKey = GlobalKey<FormState>();
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -87,7 +87,19 @@ class _FourthPageState extends State<FourthPage> {
   }
 
   Widget build(BuildContext context) {
-    return Form(
+  
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('LOGIN'),
+      ),
+      body: Center(
+          child: Container(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+             Form(
       key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,7 +208,9 @@ class _FourthPageState extends State<FourthPage> {
               )),
         ],
       ),
+    )
+            ]),
+      )),
     );
   }
 }
-
