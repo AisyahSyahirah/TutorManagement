@@ -12,6 +12,64 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   final _formKey = GlobalKey<FormState>();
 
+  void _adminlogin() {
+    _showDialog();
+  }
+
+  void _showDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text("Login for Admin", textAlign: TextAlign.center),
+            actions: <Widget>[
+              Form(
+                  child: Column(
+                children: [
+                  TextFormField(
+                    //controller: weightController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                    },
+                  ),
+                  TextFormField(
+                    //controller: weightController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: ElevatedButton(
+                        child: const Text('Submit'),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.pushNamed(
+                              context,
+                              Routes.secPage,
+                            );
+                          }
+                        }),
+                  )
+                ],
+              ))
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,48 +103,10 @@ class _FirstPageState extends State<FirstPage> {
                   padding: const EdgeInsets.all(20),
                   child: ElevatedButton(
                       child: const Text('Login for admin'),
-                      onPressed: () {
-                        Navigator.pushNamed(
-                          context,
-                          Routes.secPage,
-                        );
-                      })),
-              Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    TextFormField(
-                      //controller: weightController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Admin password',
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                      },
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: ElevatedButton(
-                          child: const Text('Submit'),
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SecPage()),
-                              );
-                            }
-                          }),
-                    ),
-                  ],
-                ),
-              )
+                      onPressed: _adminlogin)),
             ]),
       )),
     );
   }
 }
+
