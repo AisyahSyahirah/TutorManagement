@@ -12,10 +12,10 @@ void main() async {
   await Firebase.initializeApp(
     // Replace with actual values
     options: FirebaseOptions(
-      apiKey: "",
-      appId: "1:900013555509:android:48cac1837807088859d67c",
-      messagingSenderId: "900013555509",
-      projectId: "tutoring-management-system",
+      apiKey: "AIzaSyAKd8f-6TASYCG4FFghTy61esDwEJD_TCo",
+      appId: "1:637934060464:android:a018e70a7b1b268e094c75",
+      messagingSenderId: "637934060464",
+      projectId: "tutor1-50c06",
     ),
   );
   runApp(const MyApp());
