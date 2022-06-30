@@ -27,7 +27,7 @@ class _ThirdPageState extends State<ThirdPage> {
       //documentSnapshot = await firestore.collection('name').doc('n001').get();
       //CollectionReference _collectionRef = FirebaseFirestore.instance.collection('name').doc('n001').get();
       var info = firestore.collection('tutor');
-      var docSnapshot = await info.doc(fullname).get();
+      var docSnapshot = await info.doc('fullname').get();
       if (docSnapshot.exists) {
         Map<String, dynamic>? data = docSnapshot.data();
         var fname = data?['fullname'];
