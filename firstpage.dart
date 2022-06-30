@@ -24,8 +24,33 @@ class _FirstPageState extends State<FirstPage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              new Text('APPLICATION NAME'),
-              new Text('Login for Admin'),
+              Container(
+                child: Text('APPLICATION NAME'),
+                decoration:
+                    BoxDecoration(shape: BoxShape.circle, color: Colors.purple),
+                padding: EdgeInsets.all(70.0),
+                margin: EdgeInsets.all(15.0),
+              ),
+              Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: ElevatedButton(
+                      child: const Text('Continue as guest'),
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          Routes.secPage,
+                        );
+                      })),
+              Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: ElevatedButton(
+                      child: const Text('Login for admin'),
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          Routes.secPage,
+                        );
+                      })),
               Form(
                 key: _formKey,
                 child: Column(
@@ -56,7 +81,7 @@ class _FirstPageState extends State<FirstPage> {
                               );
                             }
                           }),
-                    )
+                    ),
                   ],
                 ),
               )
