@@ -24,47 +24,48 @@ class _FirstPageState extends State<FirstPage> {
             title: new Text("Login for Admin", textAlign: TextAlign.center),
             actions: <Widget>[
               Form(
+                  key: _formKey,
                   child: Column(
-                children: [
-                  TextFormField(
-                    //controller: weightController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your email';
-                      }
-                    },
-                  ),
-                  TextFormField(
-                    //controller: weightController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
-                      }
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: ElevatedButton(
-                        child: const Text('Submit'),
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            Navigator.pushNamed(
-                              context,
-                              Routes.secPage,
-                            );
+                    children: [
+                      TextFormField(
+                        //controller: weightController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Email',
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
                           }
-                        }),
-                  )
-                ],
-              ))
+                        },
+                      ),
+                      TextFormField(
+                        //controller: weightController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Password',
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                        },
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: ElevatedButton(
+                            child: const Text('Submit'),
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.secPage,
+                                );
+                              }
+                            }),
+                      )
+                    ],
+                  ))
             ],
           );
         });
@@ -109,4 +110,3 @@ class _FirstPageState extends State<FirstPage> {
     );
   }
 }
-
