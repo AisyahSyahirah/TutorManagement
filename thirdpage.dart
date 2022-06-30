@@ -22,6 +22,23 @@ class _ThirdPageState extends State<ThirdPage> {
     }
   }
 
+  void _read() async {
+     DocumentSnapshot documentSnapshot;
+      //documentSnapshot = await firestore.collection('name').doc('n001').get();
+      //CollectionReference _collectionRef = FirebaseFirestore.instance.collection('name').doc('n001').get();
+      var info = firestore.collection('tutor');
+      var docSnapshot = await info.doc(fullname).get();
+      if (docSnapshot.exists) {
+        Map<String, dynamic>? data = docSnapshot.data();
+        var fname = data?['fullname'];
+        var ic = data?['icno'];
+        var contact = data?['contactno'];
+        var mail = data?['email'];
+        var sub = data?['subject'];
+        //_showDialog(fname,ic,contact, mail, sub);
+      }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,4 +76,3 @@ class _ThirdPageState extends State<ThirdPage> {
     );
   }
 }
-
