@@ -6,9 +6,9 @@
 
 ### Introduction
     Our application is a platform to display the tutors that teach a certain highschool subjects. Users can
-    apply for the position by filling in the form provided in the application. Users can then search for their 
-    details and can choose to update or delete the information. The only details that will be displayed in the 
-    application are the tutor's name, subjects offered and the tutor's contact number. 
+    apply for the position by filling in the form provided in the application. Users can then search for 
+    their details and can choose to update or delete the information. The only details that will be displayed 
+    in the application are the tutor's name, subjects offered and the tutor's contact number. 
 
 ### Objectives
     1. To provide tutors that teaches secondary school subjects
